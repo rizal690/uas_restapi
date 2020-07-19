@@ -111,3 +111,31 @@ exports.ubahbarang = function(req,res){
         }
     });
 };
+
+//Menghapus data supplier
+exports.hapussupplier = function (req, res) {
+    var id_supplier = req.body.id_supplier;
+ 
+     connection.query('DELETE FROM tb_supplier WHERE id_supplier=?',[id_supplier],
+         function (error, rows, fields) {
+             if (error) {
+                 console.log(error);
+             } else {
+                 response.ok("Berhasil hapus data",res)
+             }
+         });
+ };
+
+ //Menghapus data barang
+exports.hapusbarang = function (req, res) {
+    var id_barang = req.body.id_barang;
+ 
+     connection.query('DELETE FROM tb_barang WHERE id_barang=?',[id_barang],
+         function (error, rows, fields) {
+             if (error) {
+                 console.log(error);
+             } else {
+                 response.ok("Berhasil hapus data",res)
+             }
+         });
+ };

@@ -26,4 +26,10 @@ module.exports = function(app){
 
     app.route('/ubahbarang')
         .put(jsonku.ubahbarang);
+
+    app.route('/hapussupplier')
+        .delete(jsonku.hapussupplier);
+
+    app.route('/hapusbarang')
+        .delete(jsonku.hapusbarang);
 }
