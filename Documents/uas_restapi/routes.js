@@ -11,4 +11,7 @@ module.exports = function(app){
 
     app.route('/tampilbarang')
         .get(jsonku.tampilsemuabarang);
+
+    app.route('/tampilsupplier/:id')
+        .get(jsonku.tampilberdasarkanid);
 }
