@@ -14,4 +14,10 @@ module.exports = function(app){
 
     app.route('/tampilsupplier/:id')
         .get(jsonku.tampilberdasarkanid);
+
+    app.route('/tambahsupplier')
+        .post(jsonku.tambahsupplier);
+
+    app.route('/tambahbarang')
+        .post(jsonku.tambahbarang);
 }

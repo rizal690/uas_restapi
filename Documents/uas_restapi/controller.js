@@ -43,3 +43,37 @@ exports.tampilberdasarkanid = function (req, res) {
             }
         });
 };
+
+//menambahkan data supplier
+exports.tambahsupplier = function(req, res){
+    var nama_supplier = req.body.nama_supplier;
+    var no_telp = req.body.no_telp;
+    var alamat = req.body.alamat;
+
+    connection.query('INSERT INTO tb_supplier (nama_supplier,no_telp,alamat) VALUES(?,?,?)',
+        [nama_supplier, no_telp, alamat],
+        function (error, rows, fields){
+            if(error) {
+                console.log(error);
+            } else {
+                response.ok("berhasil menambahkan data!",res)
+            }  
+        });
+};
+
+//menambahkan data barang
+exports.tambahbarang = function(req, res){
+    var nama_barang = req.body.nama_barang;
+    var stok = req.body.stok;
+    var harga_barang = req.body.harga_barang;
+
+    connection.query('INSERT INTO tb_barang (nama_barang,stok,harga_barang) VALUES(?,?,?)',
+        [nama_barang, stok, harga_barang],
+        function (error, rows, fields){
+            if(error) {
+                console.log(error);
+            } else {
+                response.ok("berhasil menambahkan data!",res)
+            }  
+        });
+};
