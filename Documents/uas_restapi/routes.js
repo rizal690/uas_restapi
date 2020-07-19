@@ -20,4 +20,10 @@ module.exports = function(app){
 
     app.route('/tambahbarang')
         .post(jsonku.tambahbarang);
+
+    app.route('/ubahsupplier')
+        .put(jsonku.ubahsupplier);
+
+    app.route('/ubahbarang')
+        .put(jsonku.ubahbarang);
 }

@@ -77,3 +77,37 @@ exports.tambahbarang = function(req, res){
             }  
         });
 };
+
+//mengubah data supplier
+exports.ubahsupplier = function(req,res){
+    var id_supplier = req.body.id_supplier;
+    var nama_supplier = req.body.nama_supplier;
+    var no_telp = req.body.no_telp;
+    var alamat = req.body.alamat;
+
+    connection.query('UPDATE tb_supplier SET nama_supplier=?, no_telp=?, alamat=? WHERE id_supplier=?', [nama_supplier,no_telp,alamat,id_supplier],
+    function (error, rows, fields) {
+        if (error) {
+            console.log(error);
+        } else {
+            response.ok("Berhasil ubah data",res)
+        }
+    });
+};
+
+//mengubah data barang
+exports.ubahbarang = function(req,res){
+    var id_barang = req.body.id_barang;
+    var nama_barang = req.body.nama_barang;
+    var stok = req.body.stok;
+    var harga_barang = req.body.harga_barang;
+
+    connection.query('UPDATE tb_barang SET nama_barang=?, stok=?, harga_barang=? WHERE id_barang=?', [nama_barang,stok,harga_barang,id_barang],
+    function (error, rows, fields) {
+        if (error) {
+            console.log(error);
+        } else {
+            response.ok("Berhasil ubah data",res)
+        }
+    });
+};
