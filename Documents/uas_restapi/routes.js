@@ -5,4 +5,10 @@ module.exports = function(app){
 
     app.route('/')
         .get(jsonku.index);
+
+    app.route('/tampilsupplier')
+        .get(jsonku.tampilsemuasupplier);
+
+    app.route('/tampilbarang')
+        .get(jsonku.tampilsemuabarang);
 }
